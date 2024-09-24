@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+    1.导入spring的坐标spring-context
+
+    2.配置bean
+        id 属性给bean起名字
+        class 属性表示给bean定义类型
+        scope 控制是否为单例对象
+              singleton 单例
+              prototype 非单例
+    -->
+    <bean id="bookDao" name="dao" class="com.pdh.dao.impl.BookDaoImpl" scope="prototype">
+    </bean>
+        <bean id="userDao" class="com.pdh.dao.impl.UserDaoImpl"/>
+
+
+        <bean id="bookService" name="service Service" class="com.pdh.service.impl.BookServiceImpl">
+            <property name="bookDao" ref="bookDao"/>
+            <property name="userDao" ref="userDao"/>
+        </bean>
+
+</beans>
