@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookDao" class="com.pdh.dao.impl.BookDaoImpl">
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>pdh</value>
+                <value>zyr</value>
+                <value>pdh</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>pdh</value>
+                <value>pdh</value>
+                <value>zyr</value>
+                <value>pdh</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="country" value="china"/>
+                <entry key="name1" value="pdh"/>
+                <entry key="name2" value="zyr"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="country">china</prop>
+                <prop key="name1">pdh</prop>
+                <prop key="name2">zyr</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
